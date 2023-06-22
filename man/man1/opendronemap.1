@@ -1,0 +1,66 @@
+.\"
+.\" Documentation for ODM Apptainer Wrapper script "opendronemap"
+.\" groff/troff/nroff format for linux man page
+.\"
+.TH OPENDRONEMAP 1 "2023-06-21" "" ""
+
+.SH NAME
+opendronemap - a wrapper script for running apptainer images created
+from ODM's official docker image (opendronemap/odm)
+
+
+
+.SH SYNOPSIS
+\fBopendronemap\fR \fIdatasets_dir\fR \fIproject_name\fR [\fIodm_arguments\fR]...
+
+
+
+.SH REQUIRED ARGUMENTS
+
+.TP
+\fIdatasets_dir\fR
+
+This directory will be mapped into the container as "/datasets". It
+should be the parent directory of \fIproject_name\fR.
+
+.TP
+\fIproject_name\fR
+
+The name of a directory relative to \fIdatasets_dir\fR which ODM should
+process. It should have a subdirectory named "images" containing image
+files.
+
+
+
+.SH OPTIONAL ARGUMENTS
+
+.TP
+\fIodm_arguments\fR
+
+Any and all arguments that need to be passed to ODM itself. Documenting
+these is beyond the scope of this wrapper script; please see ODM's 
+online documentation.
+
+
+
+.SH ENVIRONMENT VARIABLES
+
+.TP
+\fBODM_APPTAINER_IMAGE\fR
+
+Required. Defines the path to the apptainer image file for ODM.
+
+
+
+.SH AUTHOR
+Written by Evan Linde (elinde@okstate.edu)
+
+
+
+.SH SEE ALSO
+Documentation and links for OpenDroneMap itself:
+
+https://docs.opendronemap.org/
+
+https://github.com/OpenDroneMap/ODM
+

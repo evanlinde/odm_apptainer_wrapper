@@ -1,0 +1,7 @@
+#!/bin/bash
+datasets_dir="$1"
+project_name="$2"
+# arguments for the ODM container itself are $3 and later, i.e. ${@:3}
+# The additional arguments for ODM appear to be optional.
+
+apptainer run --compat --bind "${datasets_dir}":/datasets --writable-tmpfs "${ODM_APPTAINER_IMAGE}" --project-path /datasets "${project_name}" "${@:3}"
